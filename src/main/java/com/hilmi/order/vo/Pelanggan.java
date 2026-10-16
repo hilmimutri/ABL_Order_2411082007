@@ -1,27 +1,21 @@
 package com.hilmi.order.vo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity 
 public class Pelanggan {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Long id;
     private String nama;
+    private String email;
     private String alamat;
-    private String jenis_kelamin;
+    private String jenisKelamin;
 
     public Pelanggan() {
     }
 
-    public Pelanggan(Long id, String nama, String alamat, String jenis_kelamin) {
+    public Pelanggan(Long id, String nama, String email, String alamat, String jenisKelamin) {
         this.id = id;
         this.nama = nama;
+        this.email = email;
         this.alamat = alamat;
-        this.jenis_kelamin = jenis_kelamin;
+        this.jenisKelamin = jenisKelamin;
     }
 
     public Long getId() {
@@ -48,11 +42,19 @@ public class Pelanggan {
         this.alamat = alamat;
     }
 
-    public String getJenis_kelamin() {
-        return jenis_kelamin;
+    public String getJenisKelamin() {
+        return jenisKelamin;
     }
 
-    public void setJenis_kelamin(String jenis_kelamin) {
-        this.jenis_kelamin = jenis_kelamin;
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

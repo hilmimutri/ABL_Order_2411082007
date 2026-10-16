@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,11 +25,11 @@ public class OrderController {
 
     @GetMapping
     public List<Order> getAllOrders() {
-        return orderService.getAllOrders();
+        return orderService.getAllOrder();
     }
 
     @GetMapping("/{id}")
-    public ResponseTemplate getOrderEntityById(@PathVariable("id") Long id) {
+    public List<ResponseTemplate> getOrderEntityById(@PathVariable("id") Long id) {
         return orderService.getOrderWithProdukById(id);
     }
 

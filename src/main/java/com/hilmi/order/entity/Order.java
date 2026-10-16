@@ -10,18 +10,29 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "orders")
-public class Order {
 
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long produk_Id;
-    private Long pelanggan_Id;
-    private LocalDate tgl_Trans;
-    private Integer jumlah;
-    private Double total;
+    private Long produkId;
+    private Long pelangganId;
+    private LocalDate tglTransaksi;
+    private int jumlah;
+    private double total;
 
-    // Getter & Setter
+    public Order() {
+    }
+
+    public Order(Long id, Long produkId, Long pelangganId, LocalDate tglTransaksi, int jumlah, double total) {
+        this.id = id;
+        this.produkId = produkId;
+        this.pelangganId = pelangganId;
+        this.tglTransaksi = tglTransaksi;
+        this.jumlah = jumlah;
+        this.total = total;
+    }
+
     public Long getId() {
         return id;
     }
@@ -31,42 +42,42 @@ public class Order {
     }
 
     public Long getProdukId() {
-        return produk_Id;
+        return produkId;
     }
 
-    public void setProdukId(Long produk_Id) {
-        this.produk_Id = produk_Id;
+    public void setProdukId(Long produkId) {
+        this.produkId = produkId;
     }
 
     public Long getPelangganId() {
-        return pelanggan_Id;
+        return pelangganId;
     }
 
-    public void setPelangganId(Long pelanggan_Id) {
-        this.pelanggan_Id = pelanggan_Id;
+    public void setPelangganId(Long pelangganId) {
+        this.pelangganId = pelangganId;
     }
 
     public LocalDate getTglTransaksi() {
-        return tgl_Trans;
+        return tglTransaksi;
     }
 
-    public void setTglTransaksi(LocalDate tgl_Trans) {
-        this.tgl_Trans = tgl_Trans;
+    public void setTglTransaksi(LocalDate tglTransaksi) {
+        this.tglTransaksi = tglTransaksi;
     }
 
-    public Integer getJumlah() {
+    public int getJumlah() {
         return jumlah;
     }
 
-    public void setJumlah(Integer jumlah) {
+    public void setJumlah(int jumlah) {
         this.jumlah = jumlah;
     }
 
-    public Double getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 }
